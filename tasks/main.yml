@@ -9,11 +9,12 @@
 - name: Role foolean/talk
   block:
 
-    - name: Ensure talk client is not installed (CIS)
+    - name: CIS | Ensure talk client is not installed
       become: true
       ansible.builtin.package:
         name:
           - 'talk'
+          - 'talkd'
         state: absent
 
   # Tags to be applied to this role (block)
